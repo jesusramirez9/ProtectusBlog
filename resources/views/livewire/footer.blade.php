@@ -25,6 +25,6 @@
         </div>
     </div>
     <div class="bg_azul py-4 text-center text-white font-semibold mt-4 md:mt-6 lg:mt-8 xl:mt-12">
-        <p>&copy; {{ date('Y') }} Protectus. Todos los derechos reservados | <a href="#"> Jesús Ramirez </a></p>
+        <p>&copy; {{ date('Y') }} Protectus. Todos los derechos reservados | <a href="#">Consultora Letika </a></p>
     </div>
 </div>

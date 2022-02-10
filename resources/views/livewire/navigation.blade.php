@@ -1,29 +1,31 @@
 <div class="bg_azul py-2">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 text-white font-bold">
-        <div class="flex items-center">
-            <div>
+        <div class="md:flex items-center">
+            <div class="text-center md:text-left">
                 <p> <span class="fa fa-phone-square" aria-hidden="true"></span> +511 244 7506</p>
             </div>
-            <div class="mx-6">
+            <div class="mx-6 text-center md:text-left">
                 <p><span class="fa fa-envelope" aria-hidden="true"></span> info@protectus.com.pe</p>
             </div>
-            <div class="flex ml-auto">
+            <div class="flex justify-center md:ml-auto ">
 
                 <div>
                     <a target="_blank" href="https://es-la.facebook.com/pg/Protectus2014/videos/">
-                      <i class="fab fa-facebook-square fa-2x"></i></a>
+                        <i class="fab fa-facebook-square fa-2x"></i></a>
                 </div>
                 <div class="mx-6">
-                    <a target="_blank" href="https://twitter.com/protectus2014"><i class="fab fa-twitter-square fa-2x"></i></i></a>
+                    <a target="_blank" href="https://twitter.com/protectus2014"><i
+                            class="fab fa-twitter-square fa-2x"></i></i></a>
                 </div>
                 <div>
-                    <a target="_blank" href="https://api.whatsapp.com/send?phone=51961811746"><i class="fab fa-whatsapp-square fa-2x"></i></a>
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=51961811746"><i
+                            class="fab fa-whatsapp-square fa-2x"></i></a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<nav class="bg-gray-100" x-data="{open: false}">
+<header class="bg-white" x-data="{open: false}">
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
@@ -51,24 +53,24 @@
                 <a href="/" class="flex-shrink-0 flex items-center py-4">
                     <img src="{{ asset('img/logo/logo.png') }}" class="hidden lg:block  w-auto" alt="">
                 </a>
-               
-                <div class="flex items-center text-black">
-                    <a href="" class="mx-6">
+
+                <div class="flex items-center text-black font-semibold">
+                    <a href="{{ route('inicio') }}" class="mx-4 xl:mx-5 hidden lg:block hover:bg-gray-700 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg">
                         Inicio
                     </a>
-                    <a href="" class="mx-6">
+                    <a href="#servicio" class="mx-4 xl:mx-5 hidden lg:block hover:bg-gray-700 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg">
                         Servicios
                     </a>
-                    <a href="" class="mx-6">
+                    <a href="#trabajo" class="mx-4 xl:mx-5 hidden lg:block hover:bg-gray-700 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg">
                         Nuestros Trabajos
                     </a>
-                    <a href="" class="mx-6">
+                    <a href="#testimonio" class="mx-4 xl:mx-5 hidden lg:block hover:bg-gray-700 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg">
                         Equipo
                     </a>
-                    <a href="" class="mx-6">
+                    <a href="#contacto"  class="mx-4 xl:mx-5 hidden lg:block hover:bg-gray-700 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg  {{ request()->is('contacto') ? 'active linktran  bg-yellow-500 px-4 rounded-md underline' : '' }}">
                         Contacto
                     </a>
-                    <a href="" class="text-black">
+                    <a href="{{ route('posts.index') }}" class=" px-2 rounded-lg text-white font-semibold bg-yellow-500 hover:px-2 hover:py-1 hover:text-white hover:rounded-lg  hidden lg:block {{ request()->is('noticias') ? 'active linktran  bg-yellow-500 px-4 rounded-md underline' : '' }}">
                         Noticias
                     </a>
                 </div>
@@ -88,17 +90,17 @@
                         </div>
 
                         <!--
-                    Dropdown menu, show/hide based on menu state.
+                        Dropdown menu, show/hide based on menu state.
 
-                    Entering: "transition ease-out duration-100"
-                      From: "transform opacity-0 scale-95"
-                      To: "transform opacity-100 scale-100"
-                    Leaving: "transition ease-in duration-75"
-                      From: "transform opacity-100 scale-100"
-                      To: "transform opacity-0 scale-95"
-                  -->
+                        Entering: "transition ease-out duration-100"
+                          From: "transform opacity-0 scale-95"
+                          To: "transform opacity-100 scale-100"
+                        Leaving: "transition ease-in duration-75"
+                          From: "transform opacity-100 scale-100"
+                          To: "transform opacity-0 scale-95"
+                      -->
                         <div x-show="open" x-on:click.away="open = false"
-                            class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
+                            class="origin-top-right absolute z-30 right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none"
                             role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                             <!-- Active: "bg-gray-100", Not Active: "" -->
                             <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700"
@@ -110,11 +112,17 @@
 
                             @endcan
 
+                            @can('web.recibo')
+                                <a href="{{ route('web.recibo') }}" class="block px-4 py-2 text-sm text-gray-700"
+                                    role="menuitem" tabindex="-1" id="user-menu-item-0">Ver recibo</a>
+
+                            @endcan
+
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
                                 <a href="{{ route('logout') }}" class="block px-4 py-2 text-sm text-gray-700"
                                     role="menuitem" tabindex="-1" id="user-menu-item-2" onclick="event.preventDefault();
-                                                        this.closest('form').submit();">Cerrar sesión</a>
+                                                            this.closest('form').submit();">Cerrar sesión</a>
                             </form>
 
                         </div>
@@ -123,9 +131,9 @@
             @else
                 <div>
                     <a href="{{ route('login') }}"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        class="text-gray-700 hover:bg-gray-700  border-2 border-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Ingresar</a>
                     <a href="{{ route('register') }}"
-                        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Register</a>
+                        class="text-gray-700 hover:bg-gray-700  border-2 border-gray-600 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Registrarse</a>
                 </div>
             @endauth
         </div>
@@ -133,15 +141,24 @@
 
     <!-- Mobile menu, show/hide based on menu state. -->
     <div class="sm:hidden" id="mobile-menu" x-show="open" x-on:click.away="open = false">
-        <div class="px-2 pt-2 pb-3 space-y-1">
+        <div class="px-2 grid grid-cols-1 items-center justify-center pt-2 pb-3 space-y-1">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
             <!-- <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium" aria-current="page">Dashboard</a> -->
 
-            @foreach ($categories as $category)
-                <a href="{{ route('posts.category', $category) }}"
-                    class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">{{ $category->name }}</a>
-            @endforeach
+          <a href="/" class="text-lg font-semibold text-gray-800">Inicio</a>
+          
+          <a href="{{route('posts.index')}}" class="text-lg font-semibold text-gray-800">Noticias</a>
+
 
         </div>
     </div>
-</nav>
+
+    @push('script')
+        <script type="text/javascript">
+            window.addEventListener("scroll", function() {
+                var header = document.querySelector("header");
+                header.classList.toggle("abajo", window.scrollY > 0);
+            })
+        </script>
+    @endpush
+</header>

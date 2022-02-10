@@ -45,6 +45,140 @@
     animation-name: fadeOut;
 }
 
+header.abajo{
+    background: #fff;
+    position: sticky;
+    top: 0;
+    transition: 0.7s;
+    border-bottom: 2px solid rgb(219, 212, 212);
+    z-index: 90;
+    width: 100%;
+    padding: 0.5rem 0rem;
+    scroll-margin-top: 8rem;
+}
+.prev21{
+    right: -12px;
+    top: 40%;
+}
+
+.prev11{
+    left: -12px;
+    top: 40%;
+}
+
+.prev211{
+    right: 2px;
+    top: 50%;
+}
+
+.prev111{
+    left: 2px;
+    top: 50%;
+}
+.prev4{
+    right: 10px;
+    top: 50%;
+}
+
+.prev3{
+    left: 10px;
+    top: 50%;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+#mainCarousel {
+    color: #170724;
+  
+    --carousel-button-bg: #fff;
+    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --carousel-button-svg-width: 20px;
+    --carousel-button-svg-height: 20px;
+    --carousel-button-svg-stroke-width: 2.5;
+  }
+  
+  #mainCarousel .carousel__slide {
+    background-size: cover;
+    width: 70%;
+    color: #fff;
+    font-size: 3em;
+  }
+
+  #mainCarousel2 {
+    color: #170724;
+  
+    --carousel-button-bg: #fff;
+    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --carousel-button-svg-width: 20px;
+    --carousel-button-svg-height: 20px;
+    --carousel-button-svg-stroke-width: 2.5;
+  }
+  
+  #mainCarousel2 .carousel__slide {
+    background-size: cover;
+    width: 70%;
+    color: #fff;
+    font-size: 3em;
+  }
+
+  #mainCarousel3 {
+    color: #170724;
+  
+    --carousel-button-bg: #fff;
+    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --carousel-button-svg-width: 20px;
+    --carousel-button-svg-height: 20px;
+    --carousel-button-svg-stroke-width: 2.5;
+  }
+  
+  #mainCarousel3 .carousel__slide {
+    background-size: cover;
+    width: 70%;
+    color: #fff;
+    font-size: 3em;
+  }
+
+  #mainCarousel4 {
+    color: #170724;
+  
+    --carousel-button-bg: #fff;
+    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --carousel-button-svg-width: 20px;
+    --carousel-button-svg-height: 20px;
+    --carousel-button-svg-stroke-width: 2.5;
+  }
+  
+  #mainCarousel4 .carousel__slide {
+    background-size: cover;
+    width: 70%;
+    color: #fff;
+    font-size: 3em;
+  }
+
+  #mainCarousel1 {
+    color: #170724;
+  
+    --carousel-button-bg: #fff;
+    --carousel-button-shadow: 0 2px 1px -1px rgb(0 0 0 / 20%),
+      0 1px 1px 0 rgb(0 0 0 / 14%), 0 1px 3px 0 rgb(0 0 0 / 12%);
+    --carousel-button-svg-width: 20px;
+    --carousel-button-svg-height: 20px;
+    --carousel-button-svg-stroke-width: 2.5;
+  }
+  
+  #mainCarousel1 .carousel__slide {
+    background-size: cover;
+    width: 70%;
+    color: #fff;
+    font-size: 3em;
+  }
+
 @keyframes fadeIn {
     from {
         opacity: 0;

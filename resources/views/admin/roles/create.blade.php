@@ -11,7 +11,7 @@
         <div class="card-body">
             {!! Form::open(['route' => 'admin.roles.store']) !!}
                 
-            @include('admin.roles.partial.forms')
+            @include('admin.roles.partials.forms')
 
                 {!! Form::submit('Crear Rol', ['class'=>'btn btn-primary']) !!}
             {!! Form::close() !!}

@@ -25,6 +25,12 @@ class RoleSeeder extends Seeder
       ])->syncRoles([$role1,$role2]);
 
       Permission::create([
+        'name' => 'web.recibo',
+        'description' => 'Ver el link del recibo'
+      ])->syncRoles([$role1,$role2]);
+
+
+      Permission::create([
         'name' => 'admin.users.index',
         'description' => 'Ver listado de usuarios'])->syncRoles([$role1]);
       Permission::create([

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,9 +21,28 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     
     return view('web.index');
-});
+})->name('inicio');
 
-Route::get('/noticias', [PostController::class, 'index'])->name('posts.index');
+Route::post('contacto', [ContactoController::class, 'store'])->name('contacto.store');
+
+Route::get('/recibos', function(){
+    return view('web.recibo');
+})->middleware('can:web.recibo')->name('web.recibo');
+
+Route::get('/recibos/torre-A', function () {
+    return view('web.torrea');
+})->name('web.torrea');
+Route::get('/recibos/torre-B', function () {
+    return view('web.torreb');
+})->name('web.torreb');
+Route::get('/recibos/torre-C', function () {
+    return view('web.torrec');
+})->name('web.torrec');
+Route::get('/recibos/torre-D', function () {
+    return view('web.torred');
+})->name('web.torred');
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show');
 
